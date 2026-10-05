@@ -17,6 +17,9 @@
 </head>
 <body>
 
+    <!-- Ambient Dynamic Clean-Air Particle & Flow Canvas -->
+    <canvas id="ambient-particles-canvas" class="ambient-canvas"></canvas>
+
     <!-- Ambient Glowing Background Elements -->
     <div class="ambient-glow glow-blue"></div>
     <div class="ambient-glow glow-green"></div>
@@ -24,6 +27,7 @@
 
     <!-- Header & Navigation -->
     <header>
+        <div class="scroll-progress-line" id="scroll-progress"></div>
         <div class="container">
             <a href="#home" class="logo-wrapper">
                 <!-- Using original client SVG logo -->
@@ -64,6 +68,13 @@
                     <p class="hero-desc">
                         Designing, manufacturing, and supplying high-performance air pollution control systems and spares for heavy industries globally.
                     </p>
+                    <div class="brochure-pills">
+                        <span class="pill-badge"><i class="fa-solid fa-circle-check"></i> Bag Filters</span>
+                        <span class="pill-badge"><i class="fa-solid fa-circle-check"></i> ESP</span>
+                        <span class="pill-badge"><i class="fa-solid fa-circle-check"></i> Cyclones</span>
+                        <span class="pill-badge"><i class="fa-solid fa-circle-check"></i> Scrubbers</span>
+                        <span class="pill-badge"><i class="fa-solid fa-circle-check"></i> Dust Collection System</span>
+                    </div>
                     <div class="hero-ctas">
                         <a href="#products" class="btn-primary">
                             Explore Products <i class="fa-solid fa-arrow-right"></i>
@@ -84,26 +95,9 @@
                     </div>
                 </div>
                 
-                <div class="hero-visual placeholders-grid">
-                    <div class="image-placeholder-box">
-                        <i class="fa-solid fa-industry"></i>
-                        <span class="placeholder-title">ARV Shop Floor Pic</span>
-                        <span class="placeholder-desc">Manufacturing floor layout photo</span>
-                    </div>
-                    <div class="image-placeholder-box">
-                        <i class="fa-solid fa-house-laptop"></i>
-                        <span class="placeholder-title">ARV Shop Pic</span>
-                        <span class="placeholder-desc">Corporate office & store photo</span>
-                    </div>
-                    <div class="image-placeholder-box">
-                        <i class="fa-solid fa-filter"></i>
-                        <span class="placeholder-title">Bag Filter Pic</span>
-                        <span class="placeholder-desc">Industrial bag filter photo</span>
-                    </div>
-                    <div class="image-placeholder-box">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span class="placeholder-title">ESP Pic</span>
-                        <span class="placeholder-desc">Electrostatic Precipitator photo</span>
+                <div class="hero-visual">
+                    <div class="visual-backdrop brochure-visual-frame">
+                        <img src="assets/hero_apc_systems.jpg" alt="ARV Air Pollution Control Systems - Bag Filters, ESP, Cyclones, Scrubbers, Dust Collectors">
                     </div>
                 </div>
             </div>
@@ -115,8 +109,8 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number">5,000+</div>
-                    <div class="stat-label">Sq. Ft. Pune Plant</div>
+                    <div class="stat-number">14,000+ SQ FT</div>
+                    <div class="stat-label">Pune Manufacturing Plant</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">99.99%</div>
@@ -158,11 +152,11 @@
                 <div class="values-grid">
                     <div class="value-card glass-panel">
                         <h5><i class="fa-solid fa-gears" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Precision Engineering</h5>
-                        <p>We do not compromise on product accuracy or tolerances.</p>
+                        <p>We guarantee exacting tolerances, absolute dimensional precision, and flawless craftsmanship across every engineered component.</p>
                     </div>
                     <div class="value-card glass-panel">
                         <h5><i class="fa-solid fa-leaf" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Integrity & Sustainability</h5>
-                        <p>Ethical manufacturing that actively contributes to a cleaner ecosystem.</p>
+                        <p>Ethical manufacturing practices that actively contributes to a cleaner ecosystem.</p>
                     </div>
                 </div>
             </div>
@@ -237,28 +231,154 @@
 
             <!-- Part 2: Infrastructure & Plant -->
             <div class="about-infra-section">
-                <div class="section-header">
-                    <span class="section-tag">Infrastructure</span>
-                    <h2 class="section-title">Pune Manufacturing Facility</h2>
+                <div class="section-header" style="text-align: center; max-width: 840px; margin: 0 auto 3rem auto;">
+                    <span class="section-tag"><i class="fa-solid fa-industry"></i> Infrastructure & Manufacturing</span>
+                    <h2 class="section-title">Pune Manufacturing Facilities (14,000+ SQ. FT.)</h2>
                     <p class="section-desc">
-                        Spread across 5,000 square feet in Pimpri-Chinchwad, Pune (India's premier engineering and automotive hub), our facility is equipped with automated machinery, custom fabrication setups, and testing labs.
+                        Operating across dual industrial facilities in Pimpri-Chinchwad, Pune (India's premier engineering hub). Fully equipped with automated multi-needle bag sewing lines, CNC cage welding bays, and comprehensive in-house testing laboratories.
                     </p>
                 </div>
-                
-                <div class="about-grid">
-                    <div class="facility-img">
-                        <img src="assets/factory.jpg" alt="ARV Filtration Pune Manufacturing Plant">
+
+                <!-- Key Metrics Strip -->
+                <div class="infra-stats-strip">
+                    <div class="infra-stat-pill glass-panel">
+                        <i class="fa-solid fa-vector-square"></i>
+                        <div>
+                            <span class="stat-number">14,000+ SQ. FT.</span>
+                            <span class="stat-unit">Covered Manufacturing Space</span>
+                        </div>
                     </div>
-                    <div class="about-content">
-                        <h3>Machineries & Production Capabilities</h3>
-                        <p>
-                            Our plant contains specialized tooling to guarantee clean fabric sewing and metal tolerances:
-                        </p>
-                        <ul class="infra-list" style="margin-top: 1rem; line-height: 1.8; list-style-type: none; padding-left: 0;">
-                            <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-industry" style="color: var(--color-primary); margin-right: 0.5rem;"></i> <strong>Automatic Sewing Lines:</strong> Multi-needle lockstitch sewing setups for high seam burst strength.</li>
-                            <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-shield-halved" style="color: var(--color-primary); margin-right: 0.5rem;"></i> <strong>Coating & Impregnation:</strong> Equipment for silicone oil, ePTFE membrane, and antistatic treatment.</li>
-                            <li style="margin-bottom: 0.8rem;"><i class="fa-solid fa-gears" style="color: var(--color-primary); margin-right: 0.5rem;"></i> <strong>Custom Metal Fabrication:</strong> Automated vertical wire cage welding, collecting plate rolling, and emitting electrode tooling.</li>
-                        </ul>
+                    <div class="infra-stat-pill glass-panel">
+                        <i class="fa-solid fa-building-circle-check"></i>
+                        <div>
+                            <span class="stat-number">2 Industrial Units</span>
+                            <span class="stat-unit">Dual Facilities in Chikhali, Pune</span>
+                        </div>
+                    </div>
+                    <div class="infra-stat-pill glass-panel">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <div>
+                            <span class="stat-number">CNC Cage Lines</span>
+                            <span class="stat-unit">Automated Multi-Spot Resistance Welding</span>
+                        </div>
+                    </div>
+                    <div class="infra-stat-pill glass-panel">
+                        <i class="fa-solid fa-scissors"></i>
+                        <div>
+                            <span class="stat-number">Multi-Needle Sewing</span>
+                            <span class="stat-unit">High-Tenacity Bag Stitching Floor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4-Card Visual Showcase Gallery Grid -->
+                <div class="infra-showcase-grid">
+                    <!-- Card 1: Unit 1 Facility -->
+                    <div class="infra-card glass-panel" data-index="0" tabindex="0" role="button" aria-label="View Unit 1 Facility Details">
+                        <div class="infra-img-wrapper">
+                            <img src="assets/infrastructure/plant_unit1.jpg" alt="ARV Filtration LLP Unit 1 Manufacturing Facility in Pune" loading="lazy">
+                            <span class="infra-badge"><i class="fa-solid fa-building"></i> Unit 1 Facility</span>
+                            <span class="infra-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> View Full Photo</span>
+                        </div>
+                        <div class="infra-card-body">
+                            <h3 class="infra-card-title">Unit 1 — ARV Filtration LLP Works</h3>
+                            <div class="infra-card-sub"><i class="fa-solid fa-location-dot"></i> Vitthal Nagar, Chikhali, Pune</div>
+                            <p class="infra-card-desc">
+                                Primary registered operating works featuring administrative offices, technical filter bag assembly, final QA staging, and rapid nationwide dispatch bays.
+                            </p>
+                            <ul class="infra-card-bullets">
+                                <li><i class="fa-solid fa-circle-check"></i> Registered Corporate Works & Assembly</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Final QA Inspection & Staging Area</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Direct Nationwide Logistics Dispatch Bay</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Unit 2 Modern Plant -->
+                    <div class="infra-card glass-panel" data-index="1" tabindex="0" role="button" aria-label="View Unit 2 Heavy Manufacturing Plant Details">
+                        <div class="infra-img-wrapper">
+                            <img src="assets/infrastructure/plant_unit2.jpg" alt="ARV Filtration Unit 2 14,000+ SQ FT Heavy Manufacturing Plant" loading="lazy">
+                            <span class="infra-badge highlight-green"><i class="fa-solid fa-warehouse"></i> Unit 2 • 14,000+ SQ. FT.</span>
+                            <span class="infra-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> View Full Photo</span>
+                        </div>
+                        <div class="infra-card-body">
+                            <h3 class="infra-card-title">Unit 2 — Heavy Manufacturing Plant</h3>
+                            <div class="infra-card-sub"><i class="fa-solid fa-location-dot"></i> Ganesh Nagar, Chikhali, Pune</div>
+                            <p class="infra-card-desc">
+                                Expansive modern pre-engineered industrial plant featuring 3 high-clearance loading bays, custom cage welding gantries, and raw material warehousing.
+                            </p>
+                            <ul class="infra-card-bullets">
+                                <li><i class="fa-solid fa-circle-check"></i> 14,000+ SQ. FT. Modern PEB Industrial Facility</li>
+                                <li><i class="fa-solid fa-circle-check"></i> 3 High-Clearance Shutter Bays for Heavy Loading</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Bulk Raw Material & Finished Goods Storage</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Cage Fabrication Bay -->
+                    <div class="infra-card glass-panel" data-index="2" tabindex="0" role="button" aria-label="View Filter Cage Fabrication Bay Details">
+                        <div class="infra-img-wrapper">
+                            <img src="assets/infrastructure/cage_fabrication.jpg" alt="Filter Cage Fabrication Bay & Assembly Stacks" loading="lazy">
+                            <span class="infra-badge"><i class="fa-solid fa-gears"></i> Metal Fabrication Bay</span>
+                            <span class="infra-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> View Full Photo</span>
+                        </div>
+                        <div class="infra-card-body">
+                            <h3 class="infra-card-title">Filter Cage Fabrication & Assembly Bay</h3>
+                            <div class="infra-card-sub"><i class="fa-solid fa-wrench"></i> High-Capacity Automated Spot Welding</div>
+                            <p class="infra-card-desc">
+                                Dedicated cage production shopfloor equipped with automated vertical resistance welders, structural inventory staging, and mezzanine storage.
+                            </p>
+                            <ul class="infra-card-bullets">
+                                <li><i class="fa-solid fa-circle-check"></i> Automated Resistance Multi-Spot Vertical Welding</li>
+                                <li><i class="fa-solid fa-circle-check"></i> 8, 10, 12, 16, 20 & 24 Wire Cage Configurations</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Galvanized Iron (GI), SS-304 & SS-316 Finishing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Automatic Sewing Lines -->
+                    <div class="infra-card glass-panel" data-index="3" tabindex="0" role="button" aria-label="View Automatic Filter Bag Sewing Lines Details">
+                        <div class="infra-img-wrapper">
+                            <img src="assets/infrastructure/sewing_lines.jpg" alt="Automatic Filter Bag Sewing Lines and Technicians" loading="lazy">
+                            <span class="infra-badge highlight-cyan"><i class="fa-solid fa-scissors"></i> Textile & Seam Floor</span>
+                            <span class="infra-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i> View Full Photo</span>
+                        </div>
+                        <div class="infra-card-body">
+                            <h3 class="infra-card-title">Automatic Filter Bag Sewing Lines</h3>
+                            <div class="infra-card-sub"><i class="fa-solid fa-certificate"></i> Precision Seam Construction</div>
+                            <p class="infra-card-desc">
+                                Cleanroom-grade bag fabrication floor with specialized multi-needle lockstitch industrial stations operated by certified technicians for maximum burst resistance.
+                            </p>
+                            <ul class="infra-card-bullets">
+                                <li><i class="fa-solid fa-circle-check"></i> Multi-Needle Heavy Lockstitch Sewing Setups</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Precision Collar, Snap Band & Cuff Reinforcements</li>
+                                <li><i class="fa-solid fa-circle-check"></i> High-Tenacity PTFE & Aramid Thread Stitching</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machineries & Capabilities Breakdown -->
+                <div class="testing-title" style="margin-top: 2rem; margin-bottom: 2.5rem;">
+                    <h4>Machinery & In-House Production Capabilities</h4>
+                    <p class="section-desc" style="max-width: 650px;">Specialized tooling and automated systems guaranteeing clean fabric sewing, tight metal tolerances, and zero-defect deliveries.</p>
+                </div>
+
+                <div class="infra-caps-grid">
+                    <div class="infra-cap-card glass-panel">
+                        <div class="infra-cap-icon"><i class="fa-solid fa-industry"></i></div>
+                        <h4>Automatic Sewing Lines</h4>
+                        <p>Specialized multi-needle lockstitch and chain stitch machines ensuring ultra-high seam burst strength for pulse jet, star, and envelope filter bags with PTFE membrane protection.</p>
+                    </div>
+                    <div class="infra-cap-card glass-panel">
+                        <div class="infra-cap-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h4>Custom Metal Fabrication</h4>
+                        <p>Automated vertical wire cage resistance welders, collecting plate roll-forming machines, emitting electrode tooling, and heavy venturi press fitting setups.</p>
+                    </div>
+                    <div class="infra-cap-card glass-panel">
+                        <div class="infra-cap-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h4>Coating & Finishing Treatments</h4>
+                        <p>Dedicated processing equipment for silicone oil impregnations, ePTFE membrane lamination, antistatic spark-grounding wires, acid-resistant dips, and passivations.</p>
                     </div>
                 </div>
 
@@ -327,37 +447,55 @@
 
             <!-- Tab Buttons -->
             <div class="catalog-tabs">
-                <button class="tab-btn active" data-tab="media">Filter Media & Bags</button>
-                <button class="tab-btn" data-tab="systems">OEM Systems</button>
-                <button class="tab-btn" data-tab="spares">APC & ESP Spares</button>
+                <button class="tab-btn active" data-tab="media">Filter Bags & Filter Cages</button>
+                <button class="tab-btn" data-tab="systems">Air Pollution Control Equipments</button>
+                <button class="tab-btn" data-tab="spares">Spares</button>
                 <button class="tab-btn" data-tab="services">Value Added Services</button>
             </div>
 
             <!-- 1. Filter Media Panel -->
             <div class="catalog-panel active" id="media-panel">
                 <div class="catalog-grid">
-                    <!-- Product 1 -->
+                    <!-- Product 1: Pulse Jet Filter Bag & Cage -->
                     <div class="product-card glass-panel">
                         <div class="product-image">
-                            <img src="assets/spares.jpg" alt="Filter Bags">
+                            <img src="assets/products/pulse_jet_bag_cage.jpg" alt="Pulse Jet Filter Bag & Cage">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">Top Seller</span>
-                            <h4 class="product-name">Industrial Filter Bags</h4>
-                            <p class="product-desc">Cylindrical, pocket, envelope, and snap-band bags in all fibers. Crafted for excellent dust cake release.</p>
+                            <h4 class="product-name">Pulse Jet Filter Bag & Cage</h4>
+                            <p class="product-desc">Heavy-duty pulse jet filter bags and precision-matched support cages (circular, flat, oval) engineered for optimal dust cake release and extended operating life.</p>
                             <ul class="product-meta-list">
-                                <li><i class="fa-solid fa-circle-check"></i> Standard & custom sizes</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Seamless fit with venturi collars</li>
                                 <li><i class="fa-solid fa-circle-check"></i> ePTFE, Singed, Calendered finishes</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('bag', 'Industrial Filter Bags', 'Filter Media')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('pulse-jet-bag-cage', 'Pulse Jet Filter Bag & Cage', 'Filter Bags & Filter Cages')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- Product 2 -->
+                    <!-- Product 2: Star Filter Bag & Cage -->
                     <div class="product-card glass-panel">
                         <div class="product-image">
-                            <img src="assets/spares.jpg" alt="FBD Bags">
+                            <img src="assets/products/star_bag_cage.jpg" alt="Star Filter Bag & Cage">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-badge">High Surface Area</span>
+                            <h4 class="product-name">Star Filter Bag & Cage</h4>
+                            <p class="product-desc">Star-pleated filter bags paired with specialized star-shaped cages that expand effective filtration surface area by up to 100-200% without altering baghouse casing footprint.</p>
+                            <ul class="product-meta-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Up to 2x higher air-to-cloth ratio capacity</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Direct drop-in retrofit into existing tube sheets</li>
+                            </ul>
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('star-bag-cage', 'Star Filter Bag & Cage', 'Filter Bags & Filter Cages')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Product 3: FBD Bags -->
+                    <div class="product-card glass-panel">
+                        <div class="product-image">
+                            <img src="assets/products/fbd_bags.jpg" alt="Fluidized Bed Dryer (FBD) Bags">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">Specialty</span>
@@ -367,15 +505,15 @@
                                 <li><i class="fa-solid fa-circle-check"></i> Antistatic stainless wire grids</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Food grade certified fiber selection</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('fbd', 'Fluid Bed Dryer (FBD) Bags', 'Filter Media')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('fbd', 'Fluid Bed Dryer (FBD) Bags', 'Filter Bags & Filter Cages')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- Product 3 -->
+                    <!-- Product 4: Pleated Cartridges -->
                     <div class="product-card glass-panel">
                         <div class="product-image">
-                            <img src="assets/spares.jpg" alt="Pleated Cartridges">
+                            <img src="assets/products/pleated_cartridges.jpg" alt="Pleated Filter Cartridges">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">High Surface</span>
@@ -385,15 +523,15 @@
                                 <li><i class="fa-solid fa-circle-check"></i> Easy retrofit into existing baghouses</li>
                                 <li><i class="fa-solid fa-circle-check"></i> PU molded endcaps or metal caps</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('pleated', 'Pleated Filter Cartridges', 'Filter Media')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('pleated', 'Pleated Filter Cartridges', 'Filter Bags & Filter Cages')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- Product 4 -->
+                    <!-- Product 5: Filter Press Cloth -->
                     <div class="product-card glass-panel">
                         <div class="product-image">
-                            <img src="assets/spares.jpg" alt="Filter Press Cloth">
+                            <img src="assets/products/filter_press_cloth.jpg" alt="Filter Press Cloth">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">Liquid filtration</span>
@@ -403,15 +541,15 @@
                                 <li><i class="fa-solid fa-circle-check"></i> Exceptional chemical compatibility</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Clean cake release and quick drainage</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('press-cloth', 'Filter Press Cloth', 'Filter Media')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('press-cloth', 'Filter Press Cloth', 'Filter Bags & Filter Cages')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- Product 5 -->
+                    <!-- Product 6: Pre & HEPA Filters -->
                     <div class="product-card glass-panel">
                         <div class="product-image">
-                            <img src="assets/spares.jpg" alt="HEPA Filters">
+                            <img src="assets/products/pre_hepa_filters.jpg" alt="Pre & HEPA Filters">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">Fine Air</span>
@@ -421,7 +559,7 @@
                                 <li><i class="fa-solid fa-circle-check"></i> MERV 8 to HEPA H14 rating</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Galvanized or aluminum housings</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('hepa', 'Pre & HEPA Filters', 'Filter Media')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('hepa', 'Pre & HEPA Filters', 'Filter Bags & Filter Cages')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
@@ -435,7 +573,7 @@
                     <!-- System 1 -->
                     <div class="product-card glass-panel">
                         <div class="product-image">
-                            <img src="assets/factory.jpg" alt="Electrostatic Precipitator">
+                            <img src="assets/products/esp_system.jpg" alt="Electrostatic Precipitators (ESP)">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">Large Scale</span>
@@ -445,7 +583,7 @@
                                 <li><i class="fa-solid fa-circle-check"></i> Custom multi-field configurations</li>
                                 <li><i class="fa-solid fa-circle-check"></i> TIGI-compatible rapping systems</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('esp-system', 'Electrostatic Precipitator (ESP) System', 'OEM Systems')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('esp-system', 'Electrostatic Precipitator (ESP) System', 'Air Pollution Control Equipments')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
@@ -453,7 +591,7 @@
                     <!-- System 2 -->
                     <div class="product-card glass-panel">
                         <div class="product-image">
-                            <img src="assets/factory.jpg" alt="Pulse Jet Bag Filter">
+                            <img src="assets/products/baghouse_system.jpg" alt="Pulse Jet Baghouse Filters">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">APC Systems</span>
@@ -463,15 +601,33 @@
                                 <li><i class="fa-solid fa-circle-check"></i> Automated timer-controlled purging</li>
                                 <li><i class="fa-solid fa-circle-check"></i> High volumetric flow handling</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('baghouse', 'Pulse Jet Baghouse System', 'OEM Systems')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('baghouse', 'Pulse Jet Baghouse System', 'Air Pollution Control Equipments')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- System 3 -->
+                    <!-- System 3: Cyclones -->
                     <div class="product-card glass-panel">
                         <div class="product-image">
-                            <img src="assets/factory.jpg" alt="Wet Scrubber">
+                            <img src="assets/products/cyclone_system.jpg" alt="Industrial Cyclones & Multiclones">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-badge">Centrifugal Separation</span>
+                            <h4 class="product-name">Industrial Cyclones & Multiclones</h4>
+                            <p class="product-desc">Heavy-duty centrifugal dust collectors and multicyclone clusters engineered for pre-separation of coarse abrasive particles.</p>
+                            <ul class="product-meta-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Wear-resistant abrasion linings</li>
+                                <li><i class="fa-solid fa-circle-check"></i> High volumetric airflow handling</li>
+                            </ul>
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('cyclone', 'Industrial Cyclones & Multiclones', 'Air Pollution Control Equipments')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <!-- System 4 -->
+                    <div class="product-card glass-panel">
+                        <div class="product-image">
+                            <img src="assets/products/scrubber_system.jpg" alt="Industrial Wet Scrubbers">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">Wet Scrubbing</span>
@@ -481,16 +637,15 @@
                                 <li><i class="fa-solid fa-circle-check"></i> FRP, PP, or Stainless Steel build</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Corrosive gas mitigation experts</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('scrubber', 'Wet Scrubber System', 'OEM Systems')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('scrubber', 'Wet Scrubber System', 'Air Pollution Control Equipments')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- System 4 -->
+                    <!-- System 5 -->
                     <div class="product-card glass-panel">
-                        <div class="product-image-placeholder">
-                            <i class="fa-solid fa-wind"></i>
-                            <span>[ Dust / Fume Extraction System Pic ]</span>
+                        <div class="product-image">
+                            <img src="assets/products/fume_extraction_system.jpg" alt="Dust / Fume Extraction & HVAC Ducting">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">HVAC & Ducting</span>
@@ -500,7 +655,7 @@
                                 <li><i class="fa-solid fa-circle-check"></i> High volumetric hood design</li>
                                 <li><i class="fa-solid fa-circle-check"></i> Heavy gauge spiral & rectangular ducts</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('extraction', 'Dust/Fume Extraction & HVAC Ducting', 'OEM Systems')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('extraction', 'Dust/Fume Extraction & HVAC Ducting', 'Air Pollution Control Equipments')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
@@ -508,95 +663,383 @@
                 </div>
             </div>
 
-            <!-- 3. APC & ESP Spares Panel -->
+            <!-- 3. Spares Panel -->
             <div class="catalog-panel" id="spares-panel">
-                <div class="catalog-grid">
-                    <!-- Spare 1 -->
-                    <div class="product-card glass-panel">
-                        <div class="product-image">
-                            <img src="assets/spares.jpg" alt="ESP Insulators">
+                <div class="spares-compact-header">
+                    <p class="spares-compact-note"><i class="fa-solid fa-boxes-stacked"></i> Comprehensive inventory of precision-manufactured replacement spares for Baghouse Filters and ESPs. Click any item to add to your RFQ basket.</p>
+                </div>
+
+                <!-- 4 Columns Grid: Mechanical & Field Spares -->
+                <div class="spares-4col-grid">
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-support-insulator', 'Support Insulator', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/support_insulator.jpg" alt="Support Insulator" loading="lazy">
                         </div>
-                        <div class="product-info">
-                            <span class="product-badge">ESP Spares</span>
-                            <h4 class="product-name">ESP Support Insulators & Heaters</h4>
-                            <p class="product-desc">High voltage alumina porcelain insulators (shaft, support, conical) and matching heater cartridges.</p>
-                            <ul class="product-meta-list">
-                                <li><i class="fa-solid fa-circle-check"></i> Outstanding dielectric strength</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Thermal shock-resistant design</li>
-                            </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('esp-insulator', 'ESP Insulators & Heaters', 'APC Spares')">
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Support Insulator</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-support-insulator', 'Support Insulator', 'Spares')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- Spare 2 -->
-                    <div class="product-card glass-panel">
-                        <div class="product-image">
-                            <img src="assets/spares.jpg" alt="Discharge Electrodes">
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-shaft-insulator', 'Shaft Insulator', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/shaft_insulator.jpg" alt="Shaft Insulator" loading="lazy">
                         </div>
-                        <div class="product-info">
-                            <span class="product-badge">ESP Spares</span>
-                            <h4 class="product-name">Discharge Electrodes & Plates</h4>
-                            <p class="product-desc">High-voltage emitting electrodes (spiral, rigid, pipe-and-spike) and heavy-duty collecting plates.</p>
-                            <ul class="product-meta-list">
-                                <li><i class="fa-solid fa-circle-check"></i> Precision geometry for uniform charge</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Structural distortion-proof plates</li>
-                            </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('esp-electrodes', 'ESP Electrodes & Plates', 'APC Spares')">
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Shaft Insulator</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-shaft-insulator', 'Shaft Insulator', 'Spares')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- Spare 3 -->
-                    <div class="product-card glass-panel">
-                        <div class="product-image">
-                            <img src="assets/spares.jpg" alt="Filter Cages">
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-hypalon-clamps', 'Hypalon Boot End Clamps', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/hypalon_clamps.jpg" alt="Hypalon Boot End Clamps" loading="lazy">
                         </div>
-                        <div class="product-info">
-                            <span class="product-badge">Baghouse Spares</span>
-                            <h4 class="product-name">Heavy-Duty Filter Cages</h4>
-                            <p class="product-desc">Galvanized, stainless steel, or organic silicon coated cage grids (circular, flat, star shape) supporting bags.</p>
-                            <ul class="product-meta-list">
-                                <li><i class="fa-solid fa-circle-check"></i> Up to 24 vertical wire options</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Integrated venturi collars for pulse jets</li>
-                            </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('cage', 'Filter Cages', 'APC Spares')">
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Hypalon Boot End Clamps</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-hypalon-clamps', 'Hypalon Boot End Clamps', 'Spares')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- Spare 4 -->
-                    <div class="product-card glass-panel">
-                        <div class="product-image">
-                            <img src="assets/spares.jpg" alt="Pulse Solenoid Valves">
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-rapper-coil', 'Rapper Coil', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/rapper_coil.jpg" alt="Rapper Coil" loading="lazy">
                         </div>
-                        <div class="product-info">
-                            <span class="product-badge">Baghouse Spares</span>
-                            <h4 class="product-name">Pulse Solenoid Valves & Diaphragms</h4>
-                            <p class="product-desc">High speed diaphragms for quick millisecond response time, providing explosive cleaning jet air.</p>
-                            <ul class="product-meta-list">
-                                <li><i class="fa-solid fa-circle-check"></i> Sizes: 3/4&quot;, 1&quot;, 1.5&quot;, 2&quot;, 2.5&quot;</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Waterproof terminal coil enclosures</li>
-                            </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('solenoid-valve', 'Pulse Solenoid Valves', 'APC Spares')">
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Rapper Coil</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-rapper-coil', 'Rapper Coil', 'Spares')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
                     </div>
-                    <!-- Spare 5 -->
-                    <div class="product-card glass-panel">
-                        <div class="product-image">
-                            <img src="assets/spares.jpg" alt="Sequential Timer Card">
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-emitting-electrode', 'Emitting Discharge Electrode', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/emitting_electrode.jpg" alt="Emitting Discharge Electrode" loading="lazy">
                         </div>
-                        <div class="product-info">
-                            <span class="product-badge">Control Cards</span>
-                            <h4 class="product-name">Sequential Timer Cards & Controllers</h4>
-                            <p class="product-desc">Microprocessor controllers to schedule pulse timings, adjusting interval based on differential pressure (dP).</p>
-                            <ul class="product-meta-list">
-                                <li><i class="fa-solid fa-circle-check"></i> 8, 16, 24 channels customizable</li>
-                                <li><i class="fa-solid fa-circle-check"></i> LED status indicators, digital DP outputs</li>
-                            </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('timer-card', 'Sequential Timer Card', 'APC Spares')">
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Emitting Discharge Electrode</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-emitting-electrode', 'Emitting Discharge Electrode', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-collecting-plate', 'Collecting Plate / Electrode', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/collecting_plate.jpg" alt="Collecting Plate / Electrode" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Collecting Plate / Electrode</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-collecting-plate', 'Collecting Plate / Electrode', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-rotary-airlock', 'Rotary Airlock Valve', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/rotary_airlock.jpg" alt="Rotary Airlock Valve" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Rotary Airlock Valve</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-rotary-airlock', 'Rotary Airlock Valve', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-slide-gate-diodes', 'Slide Gate Diodes', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/slide_gate_diodes.jpg" alt="Slide Gate Diodes" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Slide Gate Diodes</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-slide-gate-diodes', 'Slide Gate Diodes', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-thermostat', 'Thermostat', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/thermostat.jpg" alt="Thermostat" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Thermostat</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-thermostat', 'Thermostat', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-temp-rtd', 'Temperature element / RTD', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/temp_rtd.jpg" alt="Temperature element / RTD" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Temperature element / RTD</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-temp-rtd', 'Temperature element / RTD', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-hopper-heater', 'Hopper Heater Pad', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/hopper_heater.jpg" alt="Hopper Heater Pad" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Hopper Heater Pad</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-hopper-heater', 'Hopper Heater Pad', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-level-switch', 'Level Switch', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/level_switch.jpg" alt="Level Switch" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Level Switch</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-level-switch', 'Level Switch', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-zero-speed-switch', 'Zero Speed Switch', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/zero_speed_switch.jpg" alt="Zero Speed Switch" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Zero Speed Switch</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-zero-speed-switch', 'Zero Speed Switch', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-dp-switch', 'Differential Pressure Switch', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/dp_switch.jpg" alt="Differential Pressure Switch" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Differential Pressure Switch</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-dp-switch', 'Differential Pressure Switch', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-gd-screen', 'Gas Distribution Screen', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/gd_screen.jpg" alt="Gas Distribution Screen" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Gas Distribution Screen</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-gd-screen', 'Gas Distribution Screen', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-hanger-tadpole', 'Top & Bottom Hanger / Tadpole', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/hanger_tadpole.jpg" alt="Top & Bottom Hanger / Tadpole" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Top & Bottom Hanger / Tadpole</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-hanger-tadpole', 'Top & Bottom Hanger / Tadpole', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-access-door', 'Access Door', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/access_door.jpg" alt="Access Door" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Access Door</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-access-door', 'Access Door', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-explosion-vent', 'Explosion Vent / Door', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/explosion_vent.jpg" alt="Explosion Vent / Door" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Explosion Vent / Door</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-explosion-vent', 'Explosion Vent / Door', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-expansion-joint', 'Expansion Joint', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/expansion_joint.jpg" alt="Expansion Joint" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Expansion Joint</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-expansion-joint', 'Expansion Joint', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-grounding-switch', 'Grounding Switch', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/grounding_switch.jpg" alt="Grounding Switch" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Grounding Switch</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-grounding-switch', 'Grounding Switch', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-pneumatic-vibrator', 'Pneumatic Vibrator', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/pneumatic_vibrator.jpg" alt="Pneumatic Vibrator" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Pneumatic Vibrator</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-pneumatic-vibrator', 'Pneumatic Vibrator', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-sequence-controller', 'Sequence Controller', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/sequence_controller.jpg" alt="Sequence Controller" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Sequence Controller</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-sequence-controller', 'Sequence Controller', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-solenoid-valve', 'Pulse Solenoid Valve', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/pulse_valve.jpg" alt="Pulse Solenoid Valve" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Pulse Solenoid Valve</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-solenoid-valve', 'Pulse Solenoid Valve', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TR Set Components -->
+                <h4 class="spares-group-title"><i class="fa-solid fa-bolt"></i> TR Set Components</h4>
+                <div class="spares-4col-grid">
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-trcc-controller', 'TRCC Controller', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/trcc_controller.jpg" alt="TRCC Controller" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">TRCC Controller</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-trcc-controller', 'TRCC Controller', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-firing-module-card', 'Firing Module Card', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/firing_module_card.jpg" alt="Firing Module Card" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Firing Module Card</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-firing-module-card', 'Firing Module Card', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-ht-lt-bushing', 'HT and LT Bushing', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/ht_lt_bushing.jpg" alt="HT and LT Bushing" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">HT and LT Bushing</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-ht-lt-bushing', 'HT and LT Bushing', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-smps-power-card', 'SMPS / Power Supply Card', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/smps_power_card.jpg" alt="SMPS / Power Supply Card" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">SMPS / Power Supply Card</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-smps-power-card', 'SMPS / Power Supply Card', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-gas-oil-relay', 'Gas & Oil relay', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/gas_oil_relay.jpg" alt="Gas & Oil relay" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Gas & Oil relay</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-gas-oil-relay', 'Gas & Oil relay', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Microtapper Panel Components -->
+                <h4 class="spares-group-title"><i class="fa-solid fa-microchip"></i> Microtapper Panel Components</h4>
+                <div class="spares-4col-grid">
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-row-card', 'Row Card', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/row_card.jpg" alt="Row Card" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Row Card</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-row-card', 'Row Card', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-column-card', 'Column Card', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/column_card.jpg" alt="Column Card" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Column Card</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-column-card', 'Column Card', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-plc-card', 'PLC Card', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/plc_card.jpg" alt="PLC Card" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">PLC Card</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-plc-card', 'PLC Card', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-microtapper-firing-card', 'Firing Module Card', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/microtapper_firing_card.jpg" alt="Firing Module Card" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">Firing Module Card</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-microtapper-firing-card', 'Firing Module Card', 'Spares')">
+                                <i class="fa-solid fa-plus"></i> Add to RFQ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="spare-card-grid-item glass-panel" onclick="addProductToRFQ('spare-hmi-display', 'HMI / Display Unit', 'Spares')">
+                        <div class="spare-card-image-box">
+                            <img src="assets/spares/hmi_display.jpg" alt="HMI / Display Unit" loading="lazy">
+                        </div>
+                        <div class="spare-card-content">
+                            <h5 class="spare-card-name">HMI / Display Unit</h5>
+                            <button class="btn-card-add-rfq" onclick="event.stopPropagation(); addProductToRFQ('spare-hmi-display', 'HMI / Display Unit', 'Spares')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
@@ -663,9 +1106,8 @@
                     </div>
                     <!-- Service 4 -->
                     <div class="product-card glass-panel">
-                        <div class="product-image-placeholder">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                            <span>[ Installation Supervision Pic ]</span>
+                        <div class="product-image">
+                            <img src="assets/services/erection_installation.jpg" alt="Erection, Installation & Commissioning">
                         </div>
                         <div class="product-info">
                             <span class="product-badge">Installation</span>
@@ -683,18 +1125,18 @@
                     <!-- Service 5 -->
                     <div class="product-card glass-panel">
                         <div class="product-image-placeholder">
-                            <i class="fa-solid fa-gauge-high"></i>
-                            <span>[ GD Test for ESP Pic ]</span>
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>[ AMC for APC Systems ]</span>
                         </div>
                         <div class="product-info">
-                            <span class="product-badge">Testing</span>
-                            <h4 class="product-name">GD Test for ESP (On Site)</h4>
-                            <p class="product-desc">Physical Gas Distribution (GD) testing for Electrostatic Precipitators to map airflow parameters and verify compliance with standards.</p>
+                            <span class="product-badge">Annual Maintenance</span>
+                            <h4 class="product-name">AMC for APC</h4>
+                            <p class="product-desc">Comprehensive Annual Maintenance Contracts (AMC) for Air Pollution Control systems — ensuring regular preventive audits, emission standard compliance, and minimum plant downtime.</p>
                             <ul class="product-meta-list">
-                                <li><i class="fa-solid fa-circle-check"></i> On-site velocity measurements</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Custom baffle adjustments</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Scheduled preventive audits & servicing</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Guaranteed peak filtration efficiency</li>
                             </ul>
-                            <button class="btn-add-rfq" onclick="addProductToRFQ('service-gd', 'GD Test for ESP (On Site)', 'Engineering Services')">
+                            <button class="btn-add-rfq" onclick="addProductToRFQ('service-amc', 'AMC for APC', 'Value Added Services')">
                                 <i class="fa-solid fa-plus"></i> Add to RFQ
                             </button>
                         </div>
@@ -787,44 +1229,104 @@
             
             <div class="clients-slider-wrapper">
                 <div class="clients-track">
-                    <!-- First set -->
-                    <div class="client-logo-item">Alcon Microfine</div>
-                    <div class="client-logo-item">Adani</div>
-                    <div class="client-logo-item">Raj Process Equipment</div>
-                    <div class="client-logo-item">Kaolin</div>
-                    <div class="client-logo-item">Envipro</div>
-                    <div class="client-logo-item">JK Lakshmi Cement</div>
-                    <div class="client-logo-item">Saurashtra Cement</div>
-                    <div class="client-logo-item">JSW</div>
-                    <div class="client-logo-item">Indus Coffee</div>
-                    <div class="client-logo-item">Prabath Dairy</div>
-                    <div class="client-logo-item">Vaishno Therm System</div>
-                    <div class="client-logo-item">ENEFF Solutions</div>
-                    <div class="client-logo-item">Eco Oils Malaysia</div>
-                    <div class="client-logo-item">Shell</div>
-                    <div class="client-logo-item">Raichur Thermal Power Plant</div>
-                    <div class="client-logo-item">Silvertone Paper Mill</div>
-                    <div class="client-logo-item">Aqgen Pharma LLP</div>
-                    <div class="client-logo-item">Ultratech</div>
-                    <!-- Duplicate set for infinite loop -->
-                    <div class="client-logo-item">Alcon Microfine</div>
-                    <div class="client-logo-item">Adani</div>
-                    <div class="client-logo-item">Raj Process Equipment</div>
-                    <div class="client-logo-item">Kaolin</div>
-                    <div class="client-logo-item">Envipro</div>
-                    <div class="client-logo-item">JK Lakshmi Cement</div>
-                    <div class="client-logo-item">Saurashtra Cement</div>
-                    <div class="client-logo-item">JSW</div>
-                    <div class="client-logo-item">Indus Coffee</div>
-                    <div class="client-logo-item">Prabath Dairy</div>
-                    <div class="client-logo-item">Vaishno Therm System</div>
-                    <div class="client-logo-item">ENEFF Solutions</div>
-                    <div class="client-logo-item">Eco Oils Malaysia</div>
-                    <div class="client-logo-item">Shell</div>
-                    <div class="client-logo-item">Raichur Thermal Power Plant</div>
-                    <div class="client-logo-item">Silvertone Paper Mill</div>
-                    <div class="client-logo-item">Aqgen Pharma LLP</div>
-                    <div class="client-logo-item">Ultratech</div>
+                    <!-- Set 1 -->
+                    <div class="client-logo-item" title="JK Lakshmi Cement Ltd.">
+                        <img src="assets/clients/jk_lakshmi.png" alt="JK Lakshmi Cement">
+                    </div>
+                    <div class="client-logo-item" title="JSW Group">
+                        <img src="assets/clients/jsw.png" alt="JSW">
+                    </div>
+                    <div class="client-logo-item" title="Indus Coffee">
+                        <img src="assets/clients/indus_coffee.png" alt="Indus Coffee">
+                    </div>
+                    <div class="client-logo-item" title="Prabhat Dairy">
+                        <img src="assets/clients/prabhat_dairy.png" alt="Prabhat Dairy">
+                    </div>
+                    <div class="client-logo-item" title="ENEFF SOLUTIONS">
+                        <img src="assets/clients/eneff_solutions.png" alt="ENEFF SOLUTIONS">
+                    </div>
+                    <div class="client-logo-item" title="Shell">
+                        <img src="assets/clients/shell.png" alt="Shell">
+                    </div>
+                    <div class="client-logo-item" title="Silverstone Paper Mill">
+                        <img src="assets/clients/silverstone_paper.png" alt="Silverstone Paper Mill">
+                    </div>
+                    <div class="client-logo-item" title="Alcon Microfine">
+                        <img src="assets/clients/alcon_microfine.png" alt="Alcon Microfine">
+                    </div>
+                    <div class="client-logo-item" title="Raj Process Equipments & Systems">
+                        <img src="assets/clients/raj_process.png" alt="Raj Process Equipment">
+                    </div>
+                    <div class="client-logo-item" title="Saurashtra Cement Limited">
+                        <img src="assets/clients/saurashtra_cement.png" alt="Saurashtra Cement">
+                    </div>
+                    <div class="client-logo-item" title="Vaishno Therm Systems">
+                        <img src="assets/clients/vaishno_therm.png" alt="Vaishno Therm System">
+                    </div>
+                    <div class="client-logo-item" title="Raichur Thermal Power Plant (KPCL)">
+                        <img src="assets/clients/raichur_kpcl.png" alt="Raichur Thermal Power Plant">
+                    </div>
+                    <div class="client-logo-item" title="Adani Group">
+                        <img src="assets/clients/adani.png" alt="Adani">
+                    </div>
+                    <div class="client-logo-item" title="Kaolin Minerals & Clays">
+                        <img src="assets/clients/kaolin.png" alt="Kaolin">
+                    </div>
+                    <div class="client-logo-item" title="Envipro Engineering">
+                        <img src="assets/clients/envipro.png" alt="Envipro">
+                    </div>
+                    <div class="client-logo-item" title="UltraTech Cement">
+                        <img src="assets/clients/ultratech.png" alt="UltraTech Cement">
+                    </div>
+                    <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+                    <div class="client-logo-item" title="JK Lakshmi Cement Ltd.">
+                        <img src="assets/clients/jk_lakshmi.png" alt="JK Lakshmi Cement">
+                    </div>
+                    <div class="client-logo-item" title="JSW Group">
+                        <img src="assets/clients/jsw.png" alt="JSW">
+                    </div>
+                    <div class="client-logo-item" title="Indus Coffee">
+                        <img src="assets/clients/indus_coffee.png" alt="Indus Coffee">
+                    </div>
+                    <div class="client-logo-item" title="Prabhat Dairy">
+                        <img src="assets/clients/prabhat_dairy.png" alt="Prabhat Dairy">
+                    </div>
+                    <div class="client-logo-item" title="ENEFF SOLUTIONS">
+                        <img src="assets/clients/eneff_solutions.png" alt="ENEFF SOLUTIONS">
+                    </div>
+                    <div class="client-logo-item" title="Shell">
+                        <img src="assets/clients/shell.png" alt="Shell">
+                    </div>
+                    <div class="client-logo-item" title="Silverstone Paper Mill">
+                        <img src="assets/clients/silverstone_paper.png" alt="Silverstone Paper Mill">
+                    </div>
+                    <div class="client-logo-item" title="Alcon Microfine">
+                        <img src="assets/clients/alcon_microfine.png" alt="Alcon Microfine">
+                    </div>
+                    <div class="client-logo-item" title="Raj Process Equipments & Systems">
+                        <img src="assets/clients/raj_process.png" alt="Raj Process Equipment">
+                    </div>
+                    <div class="client-logo-item" title="Saurashtra Cement Limited">
+                        <img src="assets/clients/saurashtra_cement.png" alt="Saurashtra Cement">
+                    </div>
+                    <div class="client-logo-item" title="Vaishno Therm Systems">
+                        <img src="assets/clients/vaishno_therm.png" alt="Vaishno Therm System">
+                    </div>
+                    <div class="client-logo-item" title="Raichur Thermal Power Plant (KPCL)">
+                        <img src="assets/clients/raichur_kpcl.png" alt="Raichur Thermal Power Plant">
+                    </div>
+                    <div class="client-logo-item" title="Adani Group">
+                        <img src="assets/clients/adani.png" alt="Adani">
+                    </div>
+                    <div class="client-logo-item" title="Kaolin Minerals & Clays">
+                        <img src="assets/clients/kaolin.png" alt="Kaolin">
+                    </div>
+                    <div class="client-logo-item" title="Envipro Engineering">
+                        <img src="assets/clients/envipro.png" alt="Envipro">
+                    </div>
+                    <div class="client-logo-item" title="UltraTech Cement">
+                        <img src="assets/clients/ultratech.png" alt="UltraTech Cement">
+                    </div>
                 </div>
             </div>
         </div>
@@ -852,28 +1354,35 @@
                         </div>
                         <div class="contact-card-details">
                             <h4>Direct Channels</h4>
-                            <p><strong>Phone:</strong> +91 84850 16211</p>
+                            <p><strong>Phone:</strong> <a href="tel:+919823637402">+91 98236 37402</a>, <a href="tel:+919978713717">+91 99787 13717</a></p>
                             <p style="margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-white);">Email Addresses:</p>
                             <ul class="email-list" style="grid-template-columns: 1fr; gap: 0.4rem;">
-                                <li>General Inquiries: <a href="mailto:inquiry@arvfiltration.in">inquiry@arvfiltration.in</a></li>
-                                <li>Sales & Quotes: <a href="mailto:sales@arvfiltration.in">sales@arvfiltration.in</a></li>
+                                <li>RFQ & Inquiries: <a href="mailto:inquiry@arvfiltration.in">inquiry@arvfiltration.in</a></li>
                                 <li>Spares & Support: <a href="mailto:spares@arvfiltration.in">spares@arvfiltration.in</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Factory Location -->
+                    <!-- Factory Locations -->
                     <div class="contact-card-item glass-panel">
                         <div class="contact-card-icon">
                             <i class="fa-solid fa-industry"></i>
                         </div>
                         <div class="contact-card-details">
-                            <h4>Pune Manufacturing Unit</h4>
-                            <p>
-                                Near Indira Gandhi Garden, Patil Nagar - Chikhali,<br>
-                                Pimpri-Chinchwad, Pune - 411062,<br>
-                                Maharashtra, INDIA.
-                            </p>
+                            <h4>Pune Manufacturing Facilities</h4>
+                            <div style="margin-bottom: 0.85rem;">
+                                <strong style="color: var(--color-primary); font-size: 0.9rem; display: block; margin-bottom: 0.2rem;"><i class="fa-solid fa-location-dot"></i> Unit 1:</strong>
+                                <p style="font-size: 0.85rem; line-height: 1.5;">
+                                    Near Indira Gandhi Garden, Patil Nagar - Chikhali,<br>
+                                    Pimpri-Chinchwad, Pune - 411062, Maharashtra, INDIA.
+                                </p>
+                            </div>
+                            <div style="margin-bottom: 0.85rem;">
+                                <strong style="color: var(--color-primary); font-size: 0.9rem; display: block; margin-bottom: 0.2rem;"><i class="fa-solid fa-location-dot"></i> Unit 2:</strong>
+                                <p style="font-size: 0.85rem; line-height: 1.5;">
+                                    Gat No 1567, Dehu - Alandi Rd, Vitthal Nagar, Shelarvasti, Ganesh Nagar Chikhali, Chikhali, Pimpri-Chinchwad, Pune, Maharashtra 411062.
+                                </p>
+                            </div>
                             <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--color-primary)">
                                 <i class="fa-solid fa-clock"></i> Factory Hours: Mon - Sat: 9:00 AM - 6:00 PM IST
                             </p>
@@ -889,20 +1398,32 @@
                             <h4>Regional Representation</h4>
                             <div class="region-grid" style="display: grid; grid-template-columns: 1fr; gap: 0.8rem; margin-top: 0.5rem; font-size: 0.85rem;">
                                 <div class="region-item">
-                                    <strong style="color: var(--color-primary);">North India:</strong>
-                                    <span style="color: var(--text-muted);">Serving NCR, Rajasthan, Punjab, Haryana</span>
+                                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem;">
+                                        <strong style="color: var(--color-primary);">North India:</strong>
+                                        <a href="tel:+919823637402" style="color: var(--text-white); font-weight: 600;"><i class="fa-solid fa-phone" style="font-size: 0.75rem; color: var(--color-primary); margin-right: 0.25rem;"></i>+91 98236 37402</a>
+                                    </div>
+                                    <span style="color: var(--text-muted); font-size: 0.8rem;">Serving NCR, Rajasthan, Punjab, Haryana</span>
                                 </div>
                                 <div class="region-item">
-                                    <strong style="color: var(--color-primary);">South India:</strong>
-                                    <span style="color: var(--text-muted);">Serving Tamil Nadu, Karnataka, Andhra Pradesh, Kerala</span>
+                                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem;">
+                                        <strong style="color: var(--color-primary);">South India:</strong>
+                                        <a href="tel:+918485016211" style="color: var(--text-white); font-weight: 600;"><i class="fa-solid fa-phone" style="font-size: 0.75rem; color: var(--color-primary); margin-right: 0.25rem;"></i>+91 84850 16211</a>
+                                    </div>
+                                    <span style="color: var(--text-muted); font-size: 0.8rem;">Serving Tamil Nadu, Karnataka, Andhra Pradesh, Kerala</span>
                                 </div>
                                 <div class="region-item">
-                                    <strong style="color: var(--color-primary);">East India:</strong>
-                                    <span style="color: var(--text-muted);">Serving West Bengal, Odisha, Chhattisgarh, Jharkhand</span>
+                                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem;">
+                                        <strong style="color: var(--color-primary);">East India:</strong>
+                                        <a href="tel:+919175776211" style="color: var(--text-white); font-weight: 600;"><i class="fa-solid fa-phone" style="font-size: 0.75rem; color: var(--color-primary); margin-right: 0.25rem;"></i>+91 91757 76211</a>
+                                    </div>
+                                    <span style="color: var(--text-muted); font-size: 0.8rem;">Serving West Bengal, Odisha, Chhattisgarh, Jharkhand</span>
                                 </div>
                                 <div class="region-item">
-                                    <strong style="color: var(--color-primary);">West India:</strong>
-                                    <span style="color: var(--text-muted);">Serving Maharashtra, Gujarat, Goa, Madhya Pradesh</span>
+                                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem;">
+                                        <strong style="color: var(--color-primary);">West India:</strong>
+                                        <a href="tel:+919978713717" style="color: var(--text-white); font-weight: 600;"><i class="fa-solid fa-phone" style="font-size: 0.75rem; color: var(--color-primary); margin-right: 0.25rem;"></i>+91 99787 13717</a>
+                                    </div>
+                                    <span style="color: var(--text-muted); font-size: 0.8rem;">Serving Maharashtra, Gujarat, Goa, Madhya Pradesh</span>
                                 </div>
                             </div>
                         </div>
@@ -995,6 +1516,35 @@
             </div>
         </div>
     </footer>
+
+    <!-- Infrastructure Photo Lightbox Modal -->
+    <div id="infra-lightbox" class="infra-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Infrastructure Photo Viewer">
+        <div class="infra-lightbox-backdrop" id="lightbox-backdrop"></div>
+        <div class="infra-lightbox-container">
+            <button class="infra-lightbox-close" id="lightbox-close" aria-label="Close Lightbox">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button class="infra-lightbox-nav prev" id="lightbox-prev" aria-label="Previous Photo">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="infra-lightbox-nav next" id="lightbox-next" aria-label="Next Photo">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="infra-lightbox-content">
+                <div class="infra-lightbox-img-wrapper">
+                    <img id="lightbox-img" src="assets/infrastructure/plant_unit1.jpg" alt="ARV Filtration Infrastructure">
+                </div>
+                <div class="infra-lightbox-caption">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <span id="lightbox-tag" class="infra-badge"></span>
+                        <span id="lightbox-counter" style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600;"></span>
+                    </div>
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-desc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- App Logic Script -->
     <script src="js/app.js"></script>

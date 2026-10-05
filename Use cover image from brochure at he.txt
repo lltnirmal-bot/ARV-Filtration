@@ -1,0 +1,79 @@
+Use cover image from brochure at hero section
+
+14000 + SQ FT.
+
+Precision Engineering
+We do not compromise on product accuracy or tolerances.
+(Change this statement to positive)
+
+Ethical manufacturing practices that actively contributes to a cleaner ecosystem.
+
+Remove 'LLP' from Logo on every touchpoint.
+
+'Filter Media & Bags' change to 'Filter Bags & Filter Cages' from Products & Spares
+
+Industrial Filter Bags change to Pulse Jet Filter Bag & Cage
+Add 'Star Filter Bag & Cage' 
+
+
+OEM Systems change to 'Air Pollution Control Equipments'
+
+APC & ESP Spares change to 'spares'
+
+Add following in Spares:
+Support Insulator
+Shaft Insulator 
+Hypalon Boot End Clamps 
+Rapper Coil
+Emitting Discharge Electrode
+Collecting Plate / Electrode 
+Rotary Airlock Valve 
+Slide Gate Diodes
+Thermostat
+Temperature element / RTD 
+Hopper Heater Pad
+Level Switch
+Zero Speed Switch
+Differential Pressure Switch
+Gas Distribution Screen
+Top & Bottom Hanger / Tadpole 
+Access Door
+Explosion Vent / Door 
+Expansion Joint 
+Grounding Switch
+Pneumatic Vibrator
+Sequence Controller
+Pulse Solenoid Valve
+TR Set Components:
+-TRCC Controller
+-Firing Module Card 
+-HT and LT Bushing
+-SMPS / Power Supply Card 
+-Gas & Oil relay
+Microtapper Panel Components:
+-Row Card
+-Column Card
+-PLC Card
+-Firing Module Card
+-HMI / Display Unit
+
+in Value Added Services section, Add Photo from Brochure page 3 (Person holding cage) for Erection, Installation & Commissioning
+
+Change 'GD Test for ESP (On Site)' to 'AMC for APC'
+
+Add logos of clients.
+
+
+Numbers to add: +91 98236 37402, +91 99787 13717
+
+remove spares id
+
+Add second unit address: Gat No 1567, Dehu - Alandi Rd, Vitthal Nagar, Shelarvasti, Ganesh Nagar Chikhali, Chikhali, Pimpri-Chinchwad, Pune, Maharashtra 411062
+
+Regional Representation
+North India: +91 98236 37402 Serving NCR, Rajasthan, Punjab, Haryana
+South India: +91 84850 16211 Serving Tamil Nadu, Karnataka, Andhra Pradesh, Kerala
+East India: +91 91757 76211 Serving West Bengal, Odisha, Chhattisgarh, Jharkhand
+West India: +91 99787 13717 Serving Maharashtra, Gujarat, Goa, Madhya Pradesh
+
+Use inquiry if for RFQ
